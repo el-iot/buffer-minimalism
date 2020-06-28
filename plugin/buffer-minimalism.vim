@@ -18,9 +18,14 @@ endfunction
 
 function! BufferMinimalism()
 
+  if exists('g:minimalism_time')
+    let threshold = g:minimalism_time
+  else
+    let threshold = 3600
+  endif
+
   let current_buffer_number = bufnr('%')
   let current_time = str2nr(strftime("%s"), 10)
-  let threshold = g:minimalism_time
   let n_deleted = 0
 
   for buffer_number in nvim_list_bufs()
