@@ -3,6 +3,8 @@
 <h2> What is it? </h2>
 A simple vim-plugin for closing those buffers you've been compulsively hoarding. With `g:minimalism_time` set to 3600 (for example), the plug exposes a function "BufferMinimalism" which will close any buffers that haven't been opened or written to in the past hour.
 
+This is particularly useful for users of <a href='https://github.com/jceb/vmux'>vmux</a> and <a href='https://github.com/tpope/vim-obsession'>vim-obsession</a>.
+
 <h2> Installation </h2>
 Add this line to your `init.vim` / `.vimrc` file (though you may need to modify it slightly if you use a different plugin manager.
 
