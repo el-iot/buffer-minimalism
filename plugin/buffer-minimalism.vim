@@ -1,45 +1,46 @@
+" set up defaults
+let s:whitelist = get(g:, "bufferminimalism_whitelist", [])
+let s:threshold = get(g:, "bufferminimalism_time", 60 * 60 * 24)
+
 augroup bufferminimalism
   autocmd!
-  autocmd BufEnter * :let b:view_time = str2nr(strftime("%s"), 10) " record the entry time
+  autocmd BufEnter * :let b:view_time = str2nr(strftime("%s"), 10)
 augroup END
 
-function s:GetEditTime(buffer_number)
+function s:GetViewTime(buffer_number)
+  return getbufvar(a:buffer_number, "view_time", getftime(expand("#". string(a:buffer_number) . ":p")))
+endfunction
 
-  " try to use last view time
-  let view_time = getbufvar(a:buffer_number, "view_time")
-  if view_time != ""
-    return view_time
-  endif
-
-  " use last edit time
-  return getftime(expand("#". string(a:buffer_number) . ":p"))
-
+function! NotInWhiteList(buffer_number)
+  let file_path = expand("#" . string(a:buffer_number) . ":p")
+  for pattern in s:whitelist
+    if matchstr(file_path, pattern) != ""
+      return 0
+    endif
+  endfor
+  return 1
 endfunction
 
 function! BufferMinimalism()
 
-  if exists('g:minimalism_time')
-    let threshold = g:minimalism_time
-  else
-    let threshold = 3600
-  endif
-
   let current_buffer_number = bufnr('%')
-  let current_time = str2nr(strftime("%s"), 10)
+  let now = str2nr(strftime("%s"), 10)
   let n_deleted = 0
 
   for buffer_number in nvim_list_bufs()
-    let buffer_time = s:GetEditTime(buffer_number)
-    if nvim_buf_is_loaded(buffer_number) && (buffer_number != current_buffer_number) && (current_time - buffer_time > threshold)
+    let buffer_time = s:GetViewTime(buffer_number)
+
+    if (nvim_buf_is_loaded(buffer_number) && (now - buffer_time > s:threshold) && (buffer_number != current_buffer_number) && NotInWhiteList(buffer_number) == 1)
       let n_deleted = n_deleted + 1
       execute ":bd " . string(buffer_number)
     endif
+
   endfor
 
   if n_deleted > 0
     echo string(n_deleted) . " buffers deleted!"
   else
-    echo "Nothing to do!"
+    echo "Buffers Are Tidy!"
   endif
 
 endfunction

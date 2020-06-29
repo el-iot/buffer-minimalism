@@ -16,7 +16,9 @@ Plug 'el-iot/buffer-minimalism.vim'
 
 <h2>Configuration</h2>
 
-<code>g:minimalism_time</code> - The time period (in seconds) that a buffer must have been read / written to in recent history for it to <b>not</b> be deleted.
+<code>g:minimalism_time (default=60*60*24)</code> - The time period (in seconds) that a buffer must have been read / written to in recent history for it to <b>not</b> be deleted.
+
+<code>g:minimalism_whitelist (default=[])</code> - A list of patterns to match against filenames that should not be deleted in any case.
 
 <h2>Usage</h2>
 
