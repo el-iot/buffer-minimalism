@@ -1,17 +1,11 @@
 ```
-#        ##  ##
-### # #  #   #  ### ###
-# # # # ### ### ##  #
-### ###  #   #  ### #
-        ##  ##
-
-     #       #           #   #
-###     ##      ###  ##  #       ## ###
-###  #  # #  #  ### # #  #   #   #  ###
-# #  ## # #  ## # # ###  ##  ## ##  # #
+ __        ___  ___  ___  __                                       __
+|__) |  | |__  |__  |__  |__)     |\/| | |\ | |  |\/|  /\  |    | /__`  |\/|
+|__) \__/ |    |    |___ |  \     |  | | | \| |  |  | /~~\ |___ | .__/  |  |
 ```
+
 <h1> buffer-minimalism </h1>
-A simple vim-plugin for closing those buffers you've been compulsively hoarding. This is particularly useful for users of <a href='https://github.com/jceb/vmux'>vmux</a> and <a href='https://github.com/tpope/vim-obsession'>vim-obsession</a>.<br>.
+A simple vim-plugin for closing those buffers you've been compulsively hoarding. This is particularly useful for users of <a href='https://github.com/jceb/vmux'>vmux</a> and <a href='https://github.com/tpope/vim-obsession'>vim-obsession</a>.<br>
 
 <h2> Why? </h2>
 I often have a <b>lot</b> of buffers open and many of them are for projects that I haven't touched in weeks. This plugin allows you to quickly delete any buffers you are no longer interested in without you needing to comb through your buffer list and select the buffers / directories you are no longer using. <br>
