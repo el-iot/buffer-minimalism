@@ -26,7 +26,7 @@ function! minimalism#BufferMinimalism()
   for buffer_number in nvim_list_bufs()
     let buffer_time = s:GetViewTime(buffer_number)
 
-    if (nvim_buf_is_loaded(buffer_number) && (now - buffer_time > g:bufferminimalism_time) && (buffer_number != current_buffer_number) && NotInWhiteList(buffer_number))
+    if ((bufwinnr(buffer_number) > 0) && (now - buffer_time > g:bufferminimalism_time) && (buffer_number != current_buffer_number) && NotInWhiteList(buffer_number))
       let n_deleted = n_deleted + 1
       execute ":bd " . string(buffer_number)
     endif
