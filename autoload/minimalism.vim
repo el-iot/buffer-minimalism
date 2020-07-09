@@ -23,10 +23,9 @@ function! minimalism#BufferMinimalism()
   let now = str2nr(strftime("%s"), 10)
   let n_deleted = 0
 
-  for buffer_number in nvim_list_bufs()
+  for buffer_number in map(filter(copy(getbufinfo()), 'v:val.listed'), 'v:val.bufnr')
     let buffer_time = s:GetViewTime(buffer_number)
-
-    if ((bufwinnr(buffer_number) > 0) && (now - buffer_time > g:bufferminimalism_time) && (buffer_number != current_buffer_number) && NotInWhiteList(buffer_number))
+    if (now - buffer_time > g:bufferminimalism_time) && (buffer_number != current_buffer_number) && NotInWhiteList(buffer_number)
       let n_deleted = n_deleted + 1
       execute ":bd " . string(buffer_number)
     endif
