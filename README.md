@@ -68,7 +68,6 @@ to show how long each buffer has been unused for, i.e:
 8 -> 1 day, 1 hour, 49 minutes, 30 seconds
 9 -> 1 day, 1 hour, 48 minutes, 54 seconds
 10 -> 1 day, 22 minutes, 6 seconds
-11 -> 18454 days, 4 hours, 33 minutes, 47 seconds
 12 -> 1 day, 1 hour, 28 minutes, 53 seconds
 13 -> 2 days, 21 hours, 6 minutes, 44 seconds
 14 -> 5 hours, 39 minutes, 25 seconds
