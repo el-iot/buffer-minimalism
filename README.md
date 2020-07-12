@@ -59,19 +59,23 @@ to show how long each buffer has been unused for, i.e:
 ```
 :BufferMinimalismList
 
-2 -> 5 hours, 39 minutes, 38 seconds
-3 -> 6 hours, 39 minutes, 54 seconds
-4 -> 16 hours, 4 minutes, 24 seconds
-5 -> 1 day, 3 hours, 1 minute, 57 seconds
-6 -> 1 day, 1 hour, 48 minutes, 15 seconds
-7 -> 7 hours, 3 minutes, 16 seconds
-8 -> 1 day, 1 hour, 49 minutes, 30 seconds
-9 -> 1 day, 1 hour, 48 minutes, 54 seconds
-10 -> 1 day, 22 minutes, 6 seconds
-12 -> 1 day, 1 hour, 28 minutes, 53 seconds
-13 -> 2 days, 21 hours, 6 minutes, 44 seconds
-14 -> 5 hours, 39 minutes, 25 seconds
-25 -> 1 day, 20 hours, 24 minutes, 37 seconds
+#3: todo  -> 1 day, 7 hours, 38 minutes, 38 seconds
+#4: minimalism.vim  -> 1 hour, 17 minutes, 9 seconds
+#5: buffer-minimalism.vim  -> 2 days, 4 hours, 41 seconds
+#6: .tmux.conf  -> 2 days, 2 hours, 46 minutes, 59 seconds
+#7: external_apps_manager.py  -> 1 day, 8 hours, 2 minutes
+#8: ssh-status  -> 2 days, 2 hours, 48 minutes, 14 seconds
+#9: count-docker-containers  -> 2 days, 2 hours, 47 minutes, 38 seconds
+#10: .zshrc  -> 2 days, 1 hour, 20 minutes, 50 seconds
+#12: direnvrc  -> 2 days, 2 hours, 27 minutes, 37 seconds
+#13: init.vim  -> 3 days, 22 hours, 5 minutes, 28 seconds
+#14: lsp.lua  -> 1 day, 6 hours, 38 minutes, 9 seconds
+#25: README.md  -> 45 seconds
+#26: tree.vim  -> 1 hour, 18 minutes, 2 seconds
+#29: wikipedia_browser.vim  -> 24 minutes, 27 seconds
+#30: get_page.sh  -> 38 minutes, 10 seconds
+#31: search.sh  -> 1 hour, 10 minutes, 7 seconds
+
 ```
 
 <h2>Contributing</h2>
