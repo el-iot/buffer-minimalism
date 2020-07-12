@@ -73,20 +73,21 @@ function! minimalism#BufferMinimalismList()
   let now = str2nr(strftime("%s"), 10)
 
   for buffer_number in map(filter(copy(getbufinfo()), 'v:val.listed'), 'v:val.bufnr')
+
     let buffer_time = s:GetViewTime(buffer_number)
     let delta = now - buffer_time
     let delta_string = MakeReadable(delta)
+
+    echo '#' . string(buffer_number) . ": " . expand('#' . string(buffer_number) . ':t') " -> "
+
     if delta > g:bufferminimalism_time
-      echo string(buffer_number) . " -> "
       echohl BufferMinimalismOld
-      echon delta_string
-      echohl None
     else
-      echo string(buffer_number) . " -> "
       echohl BufferMinimalismNew
-      echon delta_string
-      echohl None
     endif
+
+    echon delta_string
+    echohl None
 
   endfor
 
