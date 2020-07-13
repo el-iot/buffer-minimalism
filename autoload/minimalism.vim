@@ -1,7 +1,6 @@
 highlight BufferMinimalismOld ctermfg=red
 highlight BufferMinimalismNew ctermfg=green
 
-
 augroup bufferminimalism
   autocmd!
   autocmd BufEnter * :let b:view_time = str2nr(strftime("%s"), 10)
@@ -22,6 +21,7 @@ function! NotInWhiteList(buffer_number)
 endfunction
 
 function! MakeReadable(n)
+
   let intervals = [["day", 86400], ["hour", 3600], ["minute", 60], ["second", 1]]
   let output = []
   let n = a:n
@@ -71,6 +71,7 @@ endfunction
 function! minimalism#BufferMinimalismList()
 
   let now = str2nr(strftime("%s"), 10)
+  let current_buffer_number = bufnr('%')
 
   for buffer_number in map(filter(copy(getbufinfo()), 'v:val.listed'), 'v:val.bufnr')
 
@@ -80,14 +81,22 @@ function! minimalism#BufferMinimalismList()
 
     echo '#' . string(buffer_number) . ": " . expand('#' . string(buffer_number) . ':t') " -> "
 
-    if delta > g:bufferminimalism_time
-      echohl BufferMinimalismOld
-    else
+    if buffer_number == current_buffer_number
       echohl BufferMinimalismNew
+      echon "now"
+      echohl None
+    else
+
+      if delta > g:bufferminimalism_time
+        echohl BufferMinimalismOld
+      else
+        echohl BufferMinimalismNew
+      endif
+
+      echon delta_string
+      echohl None
     endif
 
-    echon delta_string
-    echohl None
 
   endfor
 
