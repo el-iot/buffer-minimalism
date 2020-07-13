@@ -32,13 +32,9 @@ and run
 :PlugInstall
 ```
 
-<h2>Configuration</h2>
-
-<code>g:bufferminimalism_time (default=60\*60\*24)</code> - The time period (in seconds) that a buffer must have been read / written to in recent history for it to <b>not</b> be deleted.
-
-<code>g:bufferminimalism_whitelist (default=[])</code> - A list of patterns to match against filenames that should not be deleted in any case.
-
 <h2>Usage</h2>
+
+<img src="https://github.com/el-iot/buffer-minimalism/blob/master/demo.gif" width="800" height="450" />
 
 Simply run
 
@@ -77,6 +73,12 @@ to show how long each buffer has been unused for, i.e:
 #31: search.sh  -> 1 hour, 10 minutes, 7 seconds
 
 ```
+
+<h2>Configuration</h2>
+
+<code>g:bufferminimalism_time (default=60\*60\*24)</code> - The time period (in seconds) that a buffer must have been read / written to in recent history for it to <b>not</b> be deleted.
+
+<code>g:bufferminimalism_whitelist (default=[])</code> - A list of patterns to match against filenames that should not be deleted in any case.
 
 <h2>Contributing</h2>
 Please do! If you find the plugin useful then any contributions are welcome.
