@@ -1,6 +1,3 @@
-highlight BufferMinimalismOld ctermfg=red
-highlight BufferMinimalismNew ctermfg=green
-
 augroup bufferminimalism
   autocmd!
   autocmd BufEnter * :let b:view_time = str2nr(strftime("%s"), 10)
@@ -79,7 +76,7 @@ function! minimalism#BufferMinimalismList()
     let delta = now - buffer_time
     let delta_string = MakeReadable(delta)
 
-    echo '#' . string(buffer_number) . ": " . expand('#' . string(buffer_number) . ':t') " -> "
+    echo '#' . string(buffer_number) . ": " . expand('#' . string(buffer_number) . ':t') "-> "
 
     if buffer_number == current_buffer_number
       echohl BufferMinimalismNew
