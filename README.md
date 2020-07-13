@@ -80,5 +80,13 @@ to show how long each buffer has been unused for, i.e:
 
 <code>g:bufferminimalism_whitelist (default=[])</code> - A list of patterns to match against filenames that should not be deleted in any case.
 
+<h3>Highlight groups</h3>
+The plugin uses two highlight groups <code>BufferMinimalismOld</code> and <code>BufferMinimalismNew</code> to highlight the timedeltas shown in the output of <code>BufferMinimalismList</code>. The recommended highlight groups are:
+
+```
+highlight BufferMinimalismOld ctermfg=red
+highlight BufferMinimalismNew ctermfg=green
+```
+
 <h2>Contributing</h2>
 Please do! If you find the plugin useful then any contributions are welcome.
