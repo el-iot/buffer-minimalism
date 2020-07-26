@@ -19,7 +19,7 @@ endfunction
 
 function! MakeReadable(n)
 
-  let intervals = [["day", 86400], ["hour", 3600], ["minute", 60], ["second", 1]]
+  let intervals = [["week", 604800], ["day", 86400], ["hour", 3600], ["minute", 60], ["second", 1]]
   let output = []
   let n = a:n
 
